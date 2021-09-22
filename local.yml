@@ -11,5 +11,6 @@
     - include: tasks/ssh.yml
     - include: tasks/node.yml
     - include: tasks/npm-packages.yml
+    - include: tasks/tmux.yml
     - include: tasks/zsh.yml
 
