@@ -1,0 +1,45 @@
+- name: General Applications/Utilities
+  community.general.homebrew: name={{ item }} state=present
+  with_items:
+    - alfred
+    - github
+    - licecap
+    - kafka-tool
+    - ngrok
+    - postman
+    - slack
+    - the-unarchiver
+  tags:
+    - utilities
+- name: Install Fonts
+  community.general.homebrew: name={{ item }} state=present
+  with_items:
+    - font-fira-code
+  tags:
+    - utilities
+    - fonts
+- name: Install CLI Tools
+  community.general.homebrew: name={{ item }} state=present
+  with_items:
+    - awscli
+    - kubernetes-cli
+    - helm
+  tags:
+    - utilities
+    - cli
+- name: Install IDEs
+  community.general.homebrew: name={{ item }} state=present
+  with_items:
+    - visual-studio-code
+    - intellij-idea
+  tags:
+    - utilities
+    - ide
+- name: Install Browsers
+  community.general.homebrew: name={{ item }} state=present
+  with_items:
+    - brave-browser
+    - firefox
+  tags:
+    - utilities
+

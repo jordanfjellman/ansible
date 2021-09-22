@@ -1,0 +1,23 @@
+- name: Install fzf
+  community.general.homebrew:
+    name: fzf
+    state: present
+  tags:
+    - install
+    - fzf
+    - dotfiles
+- name: Install fzf Key Bindings and Fuzzy Completion
+  shell: $(brew --prefix)/opt/fzf/install
+  tags:
+    - install
+    - fzf
+    - dotfiles
+- name: Install fd
+  community.general.homebrew:
+    name: fd
+    state: present
+  tags:
+    - install
+    - fzf
+    - dotfiles
+
