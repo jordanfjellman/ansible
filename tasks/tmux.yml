@@ -23,3 +23,5 @@
     - tmux
     - dotfiles
 
+# Don't forget to install the plugins! `prefix + I`
+
