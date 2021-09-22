@@ -1,0 +1,11 @@
+- hosts: localhost
+  pre_tasks:
+    - name: Update Homebrew and Upgrade All Packages
+      community.general.homebrew:
+        update_homebrew: yes
+        upgrade_all: yes
+  tasks:
+    - include: tasks/node.yml
+    - include: tasks/npm-packages.yml
+    - include: tasks/zsh.yml
+
