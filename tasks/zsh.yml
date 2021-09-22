@@ -5,11 +5,13 @@
   tags:
     - install
     - zsh
+    - dotfiles
 - name: Install Oh-My-Zsh
   shell: curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
   tags:
     - install
     - zsh
+    - dotfiles
 - name: Install zsh-autosuggestions
   ansible.builtin.git:
     repo: https://github.com/zsh-users/zsh-autosuggestions.git
@@ -17,6 +19,7 @@
   tags:
     - install
     - zsh
+    - dotfiles
 - name: Install zsh-completions
   ansible.builtin.git:
     repo: https://github.com/zsh-users/zsh-completions.git
@@ -24,4 +27,5 @@
   tags:
     - install
     - zsh
+    - dotfiles
 
