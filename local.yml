@@ -11,6 +11,7 @@
     - include: tasks/dotfiles.yml
     - include: tasks/fzf.yml
     - include: tasks/kitty.yml
+    - include: tasks/neovim.yml
     - include: tasks/node.yml
     - include: tasks/npm-packages.yml
     - include: tasks/ssh.yml
