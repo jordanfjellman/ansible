@@ -1,0 +1,23 @@
+- name: Install dockutil
+  community.general.homebrew:
+    name: dockutil
+- name: Remove All Items in Dock
+  shell: dockutil --remove all
+- name: Add Default Items to Dock
+  shell: "dockutil --add {{ item }} --no-restart"
+  with_items:
+    - /Applications/kitty.app
+    - "\"/Applications/Brave Browser.app\""
+- name: Set Height of Dock
+  shell: defaults write com.apple.dock tilesize -int 50
+- name: Disable Recent Applications in Dock
+  shell: defaults write com.apple.dock show-recents -bool FALSE
+- name: Enable Tap on Trackpad
+  shell: |
+    defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
+    defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+    defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+# todo: set window scaling
+- name: Restart Finder
+  shell: killall Finder
+

@@ -31,4 +31,6 @@
       tags: ["git"]
     - import_tasks: tasks/brave.yml
       tags: ["brave", "browsers"]
+    - import_tasks: tasks/system-preferences.yml
+      tags: ["system-preferences"]
 
