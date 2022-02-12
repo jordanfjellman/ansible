@@ -12,7 +12,6 @@
     - include: tasks/fzf.yml
     - include: tasks/node.yml
     - include: tasks/npm-packages.yml
-    - include: tasks/utilities.yml
     - import_tasks: tasks/ssh.yml
       tags: ["ssh", "dotfiles"]
     - import_tasks: tasks/tmux.yml
