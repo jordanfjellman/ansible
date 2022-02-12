@@ -25,7 +25,7 @@
     - import_tasks: tasks/neovim.yml
       tags: ["neovim"]
     - import_tasks: tasks/cli-utils.yml
-      tags: ["cli"]
+      tags: ["cli", "neovim"]
     - import_tasks: tasks/git.yml
       tags: ["git"]
     - import_tasks: tasks/brave.yml

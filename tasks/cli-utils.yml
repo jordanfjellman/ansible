@@ -1,5 +1,10 @@
 - name: Install Common CLI Utlities
   community.general.homebrew: name={{ item }}
   with_items:
+    - fd
+    - fzf
+    - rg
     - tree
+- name: Install fzf Key Bindings and Fuzzy Completion
+  shell: $(brew --prefix)/opt/fzf/install
 
