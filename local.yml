@@ -10,7 +10,6 @@
   tasks:
     - include: tasks/dotfiles.yml
     - include: tasks/fzf.yml
-    - include: tasks/neovim.yml
     - include: tasks/node.yml
     - include: tasks/npm-packages.yml
     - include: tasks/utilities.yml
@@ -22,6 +21,8 @@
       tags: ["fonts"]
     - import_tasks: tasks/kitty.yml
       tags: ["kitty"]
+    - import_tasks: tasks/neovim.yml
+      tags: ["neovim"]
     - import_tasks: tasks/git.yml
       tags: ["git"]
     - import_tasks: tasks/brave.yml
