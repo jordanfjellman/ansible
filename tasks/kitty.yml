@@ -1,14 +1,6 @@
 - name: Install Kitty
-  community.general.homebrew:
+  community.general.homebrew_cask:
     name: kitty
-    state: present
-  tags:
-    - install
-    - kitty
-    - dotfiles
-- name: Install Theme
-  shell: curl -O ~/.config/kitty/theme.conf https://raw.githubusercontent.com/projekt0n/github-nvim-theme/main/extras/kitty/dimmed.conf
-  tags:
-    - install
-    - kitty
-    - dotfiles
+- name: Download "Github Dimmed" Theme
+  shell: curl --create-dirs --output {{ lookup('env', 'HOME') }}/.config/kitty/themes/github_dimmed.conf https://raw.githubusercontent.com/projekt0n/github-nvim-theme/main/terminal/kitty/github_dimmed.conf
+
