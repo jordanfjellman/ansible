@@ -8,12 +8,13 @@
         update_homebrew: yes
         upgrade_all: yes
   tasks:
-    - include: tasks/dotfiles.yml
     - include: tasks/fzf.yml
     - include: tasks/node.yml
     - include: tasks/npm-packages.yml
     - import_tasks: tasks/ssh.yml
       tags: ["ssh", "dotfiles"]
+    - import_tasks: tasks/dotfiles.yml
+      tags: ["dotfiles"]
     - import_tasks: tasks/tmux.yml
       tags: ["tmux", "zsh"]
     - import_tasks: tasks/zsh.yml
