@@ -8,8 +8,6 @@
         update_homebrew: yes
         upgrade_all: yes
   tasks:
-    - include: tasks/node.yml
-    - include: tasks/npm-packages.yml
     - import_tasks: tasks/ssh.yml
       tags: ["ssh", "dotfiles"]
     - import_tasks: tasks/dotfiles.yml

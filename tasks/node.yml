@@ -1,8 +1,0 @@
-- name: Install NVM
-  community.general.homebrew:
-    name: nvm
-    state: present
-  tags:
-    - install
-    - node
-
