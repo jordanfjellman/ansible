@@ -1,0 +1,4 @@
+- name: Install Brave
+  community.general.homebrew_cask:
+    name: brave-browser
+

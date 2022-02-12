@@ -18,4 +18,6 @@
     - include: tasks/utilities.yml
     - include: tasks/tmux.yml
     - include: tasks/zsh.yml
+    - import_tasks: tasks/brave.yml
+      tags: ["brave", "browsers"]
 
