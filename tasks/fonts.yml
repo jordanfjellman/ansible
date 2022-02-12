@@ -1,0 +1,10 @@
+- name: Tap "cask-fonts"
+  community.general.homebrew_tap:
+    name: homebrew/cask-fonts
+- name: Install FiraCode
+  community.general.homebrew_cask:
+    name: font-fira-code
+- name: Install FiraCode Nerd Font
+  community.general.homebrew_cask:
+    name: font-fira-code-nerd-font
+
