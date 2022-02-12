@@ -1,0 +1,5 @@
+- name: Install Common CLI Utlities
+  community.general.homebrew: name={{ item }}
+  with_items:
+    - tree
+
