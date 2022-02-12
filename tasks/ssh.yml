@@ -1,26 +1,21 @@
 - name: Ensure .ssh Directory Exists
-  become_user: root
   file:
     dest: "{{ dest_key | dirname }}"
     mode: 0700
     state: directory
-  tags:
-    - install
-    - ssh
-    - dotfiles
 - name: Install SSH Key
-  become_user: root
   copy:
     src: "{{ source_key }}"
     dest: "{{ dest_key }}"
     mode: 0600
-  tags:
-    - install
-    - ssh
-    - dotfiles
+- name: Set Public SSH Key
+  copy:
+    src: "{{ source_key }}.pub"
+    dest: "{{ dest_key }}.pub"
+    mode: 0644
 - name: Set Authorized Key
   authorized_key:
     user: "{{ lookup('env', 'USER') }}"
     state: present
-    key: "{{ lookup('env', 'HOME') }}/.ssh/id_rsa.pub"
+    key: "{{ lookup('file', lookup('env', 'HOME') + '/.ssh/id_rsa.pub') }}"
 
