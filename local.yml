@@ -14,6 +14,8 @@
       tags: ["dotfiles"]
     - import_tasks: tasks/tmux.yml
       tags: ["tmux", "zsh"]
+    - import_tasks: tasks/nvm.yml
+      tags: ["nvm", "node", "zsh"]
     - import_tasks: tasks/zsh.yml
       tags: ["zsh"]
     - import_tasks: tasks/fonts.yml
