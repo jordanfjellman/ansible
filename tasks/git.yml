@@ -1,0 +1,7 @@
+- name: Install Github CLI
+  community.general.homebrew:
+    name: gh
+- name: Install Github Desktop
+  community.general.homebrew_cask:
+    name: github
+

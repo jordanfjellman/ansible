@@ -20,6 +20,8 @@
     - include: tasks/zsh.yml
     - import_tasks: tasks/fonts.yml
       tags: ["fonts"]
+    - import_tasks: tasks/git.yml
+      tags: ["git"]
     - import_tasks: tasks/brave.yml
       tags: ["brave", "browsers"]
 
