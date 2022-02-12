@@ -8,7 +8,6 @@
         update_homebrew: yes
         upgrade_all: yes
   tasks:
-    - include: tasks/fzf.yml
     - include: tasks/node.yml
     - include: tasks/npm-packages.yml
     - import_tasks: tasks/ssh.yml
