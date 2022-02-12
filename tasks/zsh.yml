@@ -1,31 +1,23 @@
 - name: Install ZSH
   community.general.homebrew:
     name: zsh
-    state: present
-  tags:
-    - install
-    - zsh
-    - dotfiles
+- name: Check if Oh-My-Zsh is already installed
+  stat:
+    path: "{{ lookup('env', 'HOME') }}/.oh-my-zsh"
+  register: oh_my_zsh_dir
+- name: Report if Oh-My-Zsh is already installed
+  debug:
+    msg: "Oh-My-Zsh is already installed"
+  when: oh_my_zsh_dir.stat.exists
 - name: Install Oh-My-Zsh
   shell: curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
-  tags:
-    - install
-    - zsh
-    - dotfiles
+  when: not oh_my_zsh_dir.stat.exists
 - name: Install zsh-autosuggestions
-  ansible.builtin.git:
-    repo: https://github.com/zsh-users/zsh-autosuggestions.git
-    dest: ~/.oh-my-zsh/plugins/zsh-autosuggestions
-  tags:
-    - install
-    - zsh
-    - dotfiles
+  community.general.homebrew:
+    name: zsh-autosuggestions
 - name: Install zsh-completions
-  ansible.builtin.git:
-    repo: https://github.com/zsh-users/zsh-completions.git
-    dest: ~/.oh-my-zsh/plugins/zsh-completions
-  tags:
-    - install
-    - zsh
-    - dotfiles
+  community.general.homebrew:
+    name: zsh-completions
+- name: Remove Group Write Permissions to Homebrew Share
+  shell: chmod -R go-w '/opt/homebrew/share'
 
