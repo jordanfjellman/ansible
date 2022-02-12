@@ -1,27 +1,13 @@
 - name: Install Tmux
   community.general.homebrew:
-    name: reattach-to-user-namespace
-    state: present
-  tags:
-    - install
-    - tmux
-    - dotfiles
+    name: tmux
 - name: Install TPM (Tmux Plugin Manager)
   ansible.builtin.git:
     repo: https://github.com/tmux-plugins/tpm
-    dest: ~/.tmux/plugins/tpm
-  tags:
-    - install
-    - tmux
-    - dotfiles
+    dest: "{{ lookup('env', 'HOME') }}/.tmux/plugins/tpm"
 - name: Install reattach-to-user-namespace
   community.general.homebrew:
     name: reattach-to-user-namespace
-    state: present
-  tags:
-    - install
-    - tmux
-    - dotfiles
 
 # Don't forget to install the plugins! `prefix + I`
 
