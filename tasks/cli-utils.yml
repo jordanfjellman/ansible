@@ -7,6 +7,10 @@
     - tree
 - name: Install fzf Key Bindings and Fuzzy Completion
   shell: $(brew --prefix)/opt/fzf/install
+- name: Install Prettier
+  npm:
+    name: prettier
+    global: yes
 - name: Install Firebase Tools
   npm:
     name: firebase-tools
