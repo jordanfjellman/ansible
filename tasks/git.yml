@@ -4,4 +4,8 @@
 - name: Install Github Desktop
   community.general.homebrew_cask:
     name: github
-
+- name: Install git-lfs
+  community.general.homebrew:
+    name: git-lfs
+- name: Complete git-lfs Install
+  shell: git lfs install
