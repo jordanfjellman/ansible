@@ -1,0 +1,37 @@
+- name: Install Hammerspoon
+  community.general.homebrew_cask:
+    name: hammerspoon
+- name: Check if SpoonInstall is already installed
+  stat:
+    path: "{{ lookup('env', 'HOME') }}/.hammerspoon/Spoons/SpoonInstall.spoon"
+  register: SpoonInstall_dir
+- name: Report if SpoonInstall is already installed
+  debug:
+    msg: "SpoonInstall is already installed"
+  when: SpoonInstall_dir.stat.exists
+- name: Install SpoonInstall
+  args:
+    chdir: "{{ lookup('env', 'HOME') }}/.hammerspoon/Spoons"
+  shell: |
+    curl -sSL https://github.com/Hammerspoon/Spoons/raw/master/Spoons/SpoonInstall.spoon.zip \
+      --output SpoonInstall.spoon.zip && \
+    unzip SpoonInstall.spoon.zip && \
+    rm SpoonInstall.spoon.zip
+  when: not SpoonInstall_dir.stat.exists
+- name: Check if WindowManager is already installed
+  stat:
+    path: "{{ lookup('env', 'HOME') }}/.hammerspoon/Spoons/WindowManager.spoon"
+  register: WindowManager_dir
+- name: Report if WindowManager is already installed
+  debug:
+    msg: "WindowManager is already installed"
+  when: WindowManager_dir.stat.exists
+- name: Install WindowManager
+  args:
+    chdir: "{{ lookup('env', 'HOME') }}/.hammerspoon/Spoons"
+  shell: |
+    curl -sSL https://github.com/jordanfjellman/hammerspoon-window-manager/releases/latest/download/WindowManager.spoon.zip \
+      --output WindowManager.spoon.zip && \
+    unzip WindowManager.spoon.zip && \
+    rm WindowManager.spoon.zip
+  when: not WindowManager_dir.stat.exists

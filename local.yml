@@ -20,6 +20,8 @@
       tags: ["zsh"]
     - import_tasks: tasks/fonts.yml
       tags: ["fonts"]
+    - import_tasks: tasks/hammerspoon.yml
+      tags: ["hammerspoon"]
     - import_tasks: tasks/kitty.yml
       tags: ["kitty"]
     - import_tasks: tasks/neovim.yml
