@@ -1,0 +1,6 @@
+- name: Install Kafka
+  community.general.homebrew:
+    name: kafka
+- name: Install Offset Explorer
+  community.general.homebrew_cask:
+    name: offset-explorer

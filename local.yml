@@ -34,5 +34,11 @@
       tags: ["brave", "browsers"]
     - import_tasks: tasks/discord.yml
       tags: ["discord", "chat"]
+    - import_tasks: tasks/docker.yml
+      tags: ["docker"]
+    - import_tasks: tasks/postman.yml
+      tags: ["postman"]
+    - import_tasks: tasks/kafka.yml
+      tags: ["kafka"]
     - import_tasks: tasks/system-preferences.yml
       tags: ["system-preferences"]

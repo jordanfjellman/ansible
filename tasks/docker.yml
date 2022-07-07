@@ -1,0 +1,6 @@
+- name: Install Docker
+  community.general.homebrew_cask:
+    name: docker
+- name: Install Docker-Compose
+  community.general.homebrew:
+    name: docker-compose

@@ -1,0 +1,3 @@
+- name: Install Postman
+  community.general.homebrew_cask:
+    name: postman
