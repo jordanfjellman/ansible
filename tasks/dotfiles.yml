@@ -4,8 +4,14 @@
     state: present
 - name: Clone dotfiles
   ansible.builtin.git:
-    repo: 'git@github.com:jordanfjellman/dotfiles.git'
+    repo: 'https://github.com/jordanfjellman/dotfiles.git'
     dest: "{{ lookup('env', 'HOME') }}/code/personal/dotfiles"
+- name: Use SSH URL for dotfiles Repo
+  shell: |
+    cd "{{ lookup('env', 'HOME') }}/code/personal/dotfiles"
+    git remote set-url origin git@github.com:jordanfjellman/dotfiles.git
 - name: Stow dotfiles
-  shell: cd "{{ lookup('env', 'HOME') }}/code/personal/dotfiles" && ./install
+  shell: |
+    cd "{{ lookup('env', 'HOME') }}/code/personal/dotfiles"
+    ./install
 
