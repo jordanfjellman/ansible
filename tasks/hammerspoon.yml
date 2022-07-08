@@ -1,6 +1,13 @@
 - name: Install Hammerspoon
   community.general.homebrew_cask:
     name: hammerspoon
+- name: Check if Spoons directory already exists
+  stat:
+    path: "{{ lookup('env', 'HOME') }}/.hammerspoon/Spoons"
+  register: Spoons_dir
+- name: Create Spoons directory
+  shell: mkdir -p {{ lookup('env', 'HOME') }}/.hammerspoon/Spoons 
+  when: not Spoons_dir.stat.exists
 - name: Check if SpoonInstall is already installed
   stat:
     path: "{{ lookup('env', 'HOME') }}/.hammerspoon/Spoons/SpoonInstall.spoon"
