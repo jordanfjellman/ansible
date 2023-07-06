@@ -1,7 +1,7 @@
 - name: Check if Cargo is Already Installed
   shell: command -v cargo
   register: cargo_exists
-  ignore_errors: yes
+  ignore_errors: true
 - name: Download Installer
   when: cargo_exists is failed
   get_url:
@@ -15,3 +15,8 @@
 - name: Install sccache to Improve Compile Times
   community.general.cargo:
     name: sccache
+- name: Install rustfmt
+  shell: rustup component add rustfmt
+- name: Install graphviz # for crate graph
+  community.general.homebrew:
+    name: graphviz
