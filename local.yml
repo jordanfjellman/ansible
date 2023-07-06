@@ -12,6 +12,8 @@
       tags: ["ssh", "dotfiles"]
     - import_tasks: tasks/dotfiles.yml
       tags: ["dotfiles"]
+    - import_tasks: tasks/rustup.yml
+      tags: ["rust", "cargo", "shell", "utils"]
     - import_tasks: tasks/tmux.yml
       tags: ["tmux", "zsh"]
     - import_tasks: tasks/nvm.yml
