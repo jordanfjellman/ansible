@@ -7,4 +7,3 @@
 - name: Install FiraCode Nerd Font
   community.general.homebrew_cask:
     name: font-fira-code-nerd-font
-
