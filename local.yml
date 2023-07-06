@@ -14,6 +14,8 @@
       tags: ["dotfiles"]
     - import_tasks: tasks/rustup.yml
       tags: ["rust", "cargo", "shell", "utils"]
+    - import_tasks: tasks/cli-utils.yml
+      tags: ["utils", "neovim"]
     - import_tasks: tasks/fonts.yml
       tags: ["fonts", "shell"]
     - import_tasks: tasks/shell.yml
@@ -30,8 +32,6 @@
       tags: ["kitty"]
     - import_tasks: tasks/neovim.yml
       tags: ["neovim"]
-    - import_tasks: tasks/cli-utils.yml
-      tags: ["cli", "neovim"]
     - import_tasks: tasks/git.yml
       tags: ["git"]
     - import_tasks: tasks/brave.yml

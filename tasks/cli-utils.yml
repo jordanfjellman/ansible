@@ -1,10 +1,18 @@
-- name: Install Common CLI Utlities
+- name: Install Standard Unix Tool Replacements
+  community.general.cargo: name={{ item }}
+  with_items:
+    - bat
+    - exa
+- name: Install Other Utils Available via Cargo
+  community.general.cargo: name={{ item }}
+  with_items:
+    - coreutils
+    - ripgrep
+- name: Install Other Utils Available in Homebrew
   community.general.homebrew: name={{ item }}
   with_items:
     - fd
     - fzf
-    - rg
-    - tree
 - name: Install fzf Key Bindings and Fuzzy Completion
   shell: $(brew --prefix)/opt/fzf/install
 - name: Install Prettier

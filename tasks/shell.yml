@@ -1,3 +1,6 @@
+- name: Install CoreUtils for Cross-Shell Compatible Scripting
+  community.general.cargo:
+    name: coreutils
 - name: Install Sharship
   community.general.cargo: name={{ item }}
   with_items:
