@@ -22,8 +22,10 @@
       tags: ["shell"]
     - import_tasks: tasks/tmux.yml
       tags: ["tmux", "zsh"]
+    - import_tasks: tasks/node.yml
+      tags: ["node"]
     - import_tasks: tasks/nvm.yml
-      tags: ["nvm", "node", "zsh"]
+      tags: ["nvm", "zsh"]
     - import_tasks: tasks/zsh.yml
       tags: ["zsh"]
     - import_tasks: tasks/hammerspoon.yml
