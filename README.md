@@ -34,6 +34,17 @@ Now that Ansible is installed, we need to include the _community.general_
 ansible-galaxy collection install community.general
 ```
 
+## Run Initial Machine Setup
+
+1. Setup Dotfiles
+  ```shell
+    ansible-playbook --ask-vault-pass --tags dotfiles local.yml
+  ```
+1. Run the remaining initial install scripts
+  ```shell
+    ansible-playbook --tags <tag> local.yml
+  ```
+
 ## Resources
 
 - [ThePrimagen](https://github.com/ThePrimeagen/ansible)
