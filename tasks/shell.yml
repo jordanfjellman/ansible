@@ -1,3 +1,6 @@
+- name: Install Nushell
+  community.general.cargo:
+    name: nu
 - name: Install CoreUtils for Cross-Shell Compatible Scripting
   community.general.cargo:
     name: coreutils
