@@ -1,0 +1,5 @@
+- name: Install Sharship
+  community.general.cargo: name={{ item }}
+  with_items:
+    - cmake  # required for starship install
+    - starship

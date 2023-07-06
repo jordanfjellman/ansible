@@ -14,14 +14,16 @@
       tags: ["dotfiles"]
     - import_tasks: tasks/rustup.yml
       tags: ["rust", "cargo", "shell", "utils"]
+    - import_tasks: tasks/fonts.yml
+      tags: ["fonts", "shell"]
+    - import_tasks: tasks/shell.yml
+      tags: ["shell"]
     - import_tasks: tasks/tmux.yml
       tags: ["tmux", "zsh"]
     - import_tasks: tasks/nvm.yml
       tags: ["nvm", "node", "zsh"]
     - import_tasks: tasks/zsh.yml
       tags: ["zsh"]
-    - import_tasks: tasks/fonts.yml
-      tags: ["fonts"]
     - import_tasks: tasks/hammerspoon.yml
       tags: ["hammerspoon"]
     - import_tasks: tasks/kitty.yml
