@@ -19,4 +19,11 @@
   tags:
     - install
     - node
-
+- name: Install Neovim Node Healthcheck
+  npm:
+    name: neovim
+    global: yes
+  tags:
+    - install
+    - node
+    - neovim
